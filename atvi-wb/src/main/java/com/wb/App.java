@@ -23,6 +23,8 @@ import com.wb.negocio.Listagem10MaiorConsumoq;
 import com.wb.negocio.Listagem10menorconsumoq;
 import com.wb.negocio.Listagem5valor;
 import com.wb.negocio.ListagemGenero;
+import com.wb.negocio.ListagemProdGen;
+import com.wb.negocio.Listagemdevendas;
 import com.wb.negocio.ListarTodosClientes;
 import com.wb.negocio.ListarTodosProdutos;
 import com.wb.negocio.RegistroConsumo;
@@ -153,6 +155,7 @@ public class App {
 			System.out.println("12 - Lista dos 10 menores consumidores (em quantidade)");
 			System.out.println("13 - Lista dos 5 maiores consumidores (em valores)");
 			System.out.println("14 - Listagem geral dos produtos e serviços mais consumidos");
+			System.out.println("15 - Lista dos produtos e serviços mais consumidos por gênero");
 			System.out.println("0 - Sair");
 
 			Entrada entrada = new Entrada();
@@ -213,6 +216,14 @@ public class App {
 			case 13:
 				Listagem lista5maisv = new Listagem5valor(empresa.getClientes());
 				lista5maisv.listar();
+				break;
+			case 14:
+				Listagem listaprod = new Listagemdevendas(empresa.getClientes(), empresa.getProdserv());
+				listaprod.listar();
+				break;
+			case 15:
+				Listagem listapg = new ListagemProdGen(empresa.getClientes(), empresa.getProdserv());
+				listapg.listar();
 				break;
 			default:
 				System.out.println("Operação não entendida");

@@ -9,12 +9,20 @@ public class ProdutoOuServico {
 	public int codigo;
 	public String nome;
 	public double valorunit;
+	public int quantv;
 	public ProdutoOuServico(String nome, double valorunit) {
 		this.entrada = new Entrada();
 		this.nome = nome;
 		this.valorunit = valorunit;
 	}
 	
+	public int getQuantv() {
+		return quantv;
+	}
+	public void setQuantv(int quantv) {
+		this.quantv = quantv;
+	}
+
 	public String getNome() {
 		return nome;
 	}
@@ -50,6 +58,7 @@ public class ProdutoOuServico {
 				}
 			}
 		}
+		setQuantv(cont);
 		return cont;
 	}
 	
